@@ -38,8 +38,17 @@ public class StringCalculatorTest
     	assertEquals(23, strCalc.Add("12,11"));
     	
     }
+    @Test
     public void addMoreThanOneNumbersTest() {
     	assertEquals(44, strCalc.Add("12,24,8"));
     	
+    }
+    @Test
+    public void addLineSeparatorTest() {
+    	assertAll(
+    			() -> assertEquals(0, strCalc.Add("\n2,4,\n")),
+    			() -> assertEquals(0, strCalc.Add("2,4,\n")),
+    			() -> assertEquals(12, strCalc.Add("6\n6"))
+    			);
     }
 }

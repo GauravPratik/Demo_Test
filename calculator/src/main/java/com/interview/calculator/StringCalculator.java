@@ -19,17 +19,26 @@ public class StringCalculator
     public int Add(String numbers) {
     	
     	int sumVal = 0;
-    	if (numbers.trim().length() == 0){
-    		return 0;
-    	}
-    	else {
-    		String [] num = numbers.split(",");
+    	
+    	if  (!(numbers.lastIndexOf("\n") == numbers.length()-1 || numbers.indexOf("\n")==0)) {
     		
-    		for (String s : num) {
-    			sumVal += Integer.parseInt(s);
-    		}
-    		return sumVal;
+    		if (numbers.trim().length() == 0){
+        		return 0;
+        	}
+        	else {
+        		numbers = numbers.replace("\n", ",");
+        		String [] num = numbers.split(",");
+        		
+        		for (String s : num) {
+        			sumVal += Integer.parseInt(s);
+        		}
+        		
+        	}
+    		
     	}
+    	
+    	return sumVal;
+    	
     	
     	
     }
