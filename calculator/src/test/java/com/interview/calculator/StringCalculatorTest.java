@@ -15,7 +15,8 @@ public class StringCalculatorTest
     public void addWhenEmptyTest()
     {
     	StringCalculator strCalc = new StringCalculator();
-    	assertEquals(0, strCalc.Add(""));  	
+    	assertEquals(0, strCalc.Add(""));
+    	assertEquals(0, strCalc.Add("  "));
     }
     
     @Test

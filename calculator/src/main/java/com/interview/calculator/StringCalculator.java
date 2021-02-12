@@ -18,7 +18,18 @@ public class StringCalculator
     
     public int Add(String numbers) {
     	
-    	return -1;
+    	int sumVal = 0;
+    	if (numbers.trim().length() == 0){
+    		return 0;
+    	}
+    	else {
+    		String [] num = numbers.split(",");
+    		
+    		for (String s : num) {
+    			sumVal += Integer.parseInt(s);
+    		}
+    		return sumVal;
+    	}
     	
     	
     }
